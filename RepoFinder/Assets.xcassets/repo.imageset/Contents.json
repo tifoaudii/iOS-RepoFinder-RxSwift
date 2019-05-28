@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "baseline_library_books_black_24pt_1x.png",
       "scale" : "1x"
     },
     {
@@ -11,6 +12,7 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "baseline_library_books_black_24pt_3x.png",
       "scale" : "3x"
     }
   ],

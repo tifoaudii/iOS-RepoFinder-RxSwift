@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		298C1D2E229C33D1002DC5D3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C1D2D229C33D1002DC5D3 /* HeaderView.swift */; };
+		298C1D30229C33E0002DC5D3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C1D2F229C33E0002DC5D3 /* CardView.swift */; };
+		298C1D32229C371B002DC5D3 /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C1D31229C371B002DC5D3 /* RepoCell.swift */; };
 		29A2A2372290522B0092490C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A2A2362290522B0092490C /* AppDelegate.swift */; };
 		29A2A2392290522B0092490C /* ListRepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A2A2382290522B0092490C /* ListRepoVC.swift */; };
 		29A2A23B2290522B0092490C /* SearchRepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A2A23A2290522B0092490C /* SearchRepoVC.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		298C1D2D229C33D1002DC5D3 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		298C1D2F229C33E0002DC5D3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		298C1D31229C371B002DC5D3 /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 		29A2A2332290522B0092490C /* RepoFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepoFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A2A2362290522B0092490C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29A2A2382290522B0092490C /* ListRepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoVC.swift; sourceTree = "<group>"; };
@@ -90,6 +96,9 @@
 		29A2A24B2290531D0092490C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				298C1D2D229C33D1002DC5D3 /* HeaderView.swift */,
+				298C1D2F229C33E0002DC5D3 /* CardView.swift */,
+				298C1D31229C371B002DC5D3 /* RepoCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,9 +253,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				298C1D2E229C33D1002DC5D3 /* HeaderView.swift in Sources */,
+				298C1D32229C371B002DC5D3 /* RepoCell.swift in Sources */,
 				29A2A23B2290522B0092490C /* SearchRepoVC.swift in Sources */,
 				29A2A24E229054030092490C /* SplashVC.swift in Sources */,
 				29A2A2372290522B0092490C /* AppDelegate.swift in Sources */,
+				298C1D30229C33E0002DC5D3 /* CardView.swift in Sources */,
 				29A2A2392290522B0092490C /* ListRepoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,7 +405,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A4EA0507DE12C57252E6287D /* Pods-RepoFinder.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RepoFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -411,7 +424,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 31EE355A7C4DBEACB64C0F87 /* Pods-RepoFinder.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RepoFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
