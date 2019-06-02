@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2948AA9E229D758C00094E09 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948AA9D229D758C00094E09 /* SearchTextField.swift */; };
+		2948AAA0229D7E9E00094E09 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948AA9F229D7E9E00094E09 /* Repo.swift */; };
+		2948AAA3229D7EBD00094E09 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948AAA2229D7EBD00094E09 /* DataService.swift */; };
 		298C1D2E229C33D1002DC5D3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C1D2D229C33D1002DC5D3 /* HeaderView.swift */; };
 		298C1D30229C33E0002DC5D3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C1D2F229C33E0002DC5D3 /* CardView.swift */; };
 		298C1D32229C371B002DC5D3 /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C1D31229C371B002DC5D3 /* RepoCell.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2948AA9D229D758C00094E09 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		2948AA9F229D7E9E00094E09 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		2948AAA2229D7EBD00094E09 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		298C1D2D229C33D1002DC5D3 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		298C1D2F229C33E0002DC5D3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		298C1D31229C371B002DC5D3 /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
@@ -50,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2948AAA1229D7EA300094E09 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2948AAA2229D7EBD00094E09 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		29A2A22A2290522B0092490C = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +85,7 @@
 		29A2A2352290522B0092490C /* RepoFinder */ = {
 			isa = PBXGroup;
 			children = (
+				2948AAA1229D7EA300094E09 /* Services */,
 				29A2A24C229053230092490C /* Model */,
 				29A2A24B2290531D0092490C /* View */,
 				29A2A24A2290530E0092490C /* Controller */,
@@ -99,6 +114,7 @@
 				298C1D2D229C33D1002DC5D3 /* HeaderView.swift */,
 				298C1D2F229C33E0002DC5D3 /* CardView.swift */,
 				298C1D31229C371B002DC5D3 /* RepoCell.swift */,
+				2948AA9D229D758C00094E09 /* SearchTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -106,6 +122,7 @@
 		29A2A24C229053230092490C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2948AA9F229D7E9E00094E09 /* Repo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,10 +273,13 @@
 				298C1D2E229C33D1002DC5D3 /* HeaderView.swift in Sources */,
 				298C1D32229C371B002DC5D3 /* RepoCell.swift in Sources */,
 				29A2A23B2290522B0092490C /* SearchRepoVC.swift in Sources */,
+				2948AAA0229D7E9E00094E09 /* Repo.swift in Sources */,
 				29A2A24E229054030092490C /* SplashVC.swift in Sources */,
 				29A2A2372290522B0092490C /* AppDelegate.swift in Sources */,
 				298C1D30229C33E0002DC5D3 /* CardView.swift in Sources */,
 				29A2A2392290522B0092490C /* ListRepoVC.swift in Sources */,
+				2948AA9E229D758C00094E09 /* SearchTextField.swift in Sources */,
+				2948AAA3229D7EBD00094E09 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

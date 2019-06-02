@@ -25,13 +25,14 @@ class ListRepoVC: UIViewController {
 }
 
 extension ListRepoVC : UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "repo_cell", for: indexPath) as? RepoCell {
-            cell.setupViewCell(repoName: "Swift Documentation")
+            cell.setupViewCell(repo: "Swift Documentation")
             return cell
         } else {
             return RepoCell()

@@ -21,7 +21,6 @@ class CardView: UIView {
             self.cornerRadius = self.layer.cornerRadius
         }
     }
-    
 
     override func awakeFromNib() {
         self.setupView()
