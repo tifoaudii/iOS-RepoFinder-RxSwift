@@ -15,11 +15,18 @@ class ListRepoVC: UIViewController {
     //MARK : Outlets here
     @IBOutlet weak var repoTableView: UITableView!
     
+    //MARK: Private data
+    private var trendingReposArray = [Dictionary<String,Any>]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         repoTableView.delegate = self
         repoTableView.dataSource = self
+        
+        DataService.sharedInstance.fetchTrendingRepoDictsArrays { (trendingRepos) in
+            self.trendingReposArray = trendingRepos
+            self.repoTableView.reloadData()
+        }
     }
 
 }
@@ -27,12 +34,12 @@ class ListRepoVC: UIViewController {
 extension ListRepoVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return trendingReposArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "repo_cell", for: indexPath) as? RepoCell {
-            cell.setupViewCell(repo: "Swift Documentation")
+//            let repoItem = trendingReposArray[indexPath.row]
             return cell
         } else {
             return RepoCell()

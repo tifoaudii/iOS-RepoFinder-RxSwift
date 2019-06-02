@@ -20,6 +20,7 @@
 		29A2A2402290522D0092490C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29A2A23F2290522D0092490C /* Assets.xcassets */; };
 		29A2A2432290522D0092490C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A2A2412290522D0092490C /* LaunchScreen.storyboard */; };
 		29A2A24E229054030092490C /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A2A24D229054030092490C /* SplashVC.swift */; };
+		29EA002D22A43CDE008862AF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EA002C22A43CDE008862AF /* Utils.swift */; };
 		50468D1B9E75BF56A66941F5 /* Pods_RepoFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E853EC8A5807DF986F8DFC /* Pods_RepoFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		29A2A2422290522D0092490C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29A2A2442290522D0092490C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29A2A24D229054030092490C /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		29EA002C22A43CDE008862AF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		31EE355A7C4DBEACB64C0F87 /* Pods-RepoFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepoFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-RepoFinder/Pods-RepoFinder.release.xcconfig"; sourceTree = "<group>"; };
 		32E853EC8A5807DF986F8DFC /* Pods_RepoFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RepoFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4EA0507DE12C57252E6287D /* Pods-RepoFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepoFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RepoFinder/Pods-RepoFinder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		29A2A2352290522B0092490C /* RepoFinder */ = {
 			isa = PBXGroup;
 			children = (
+				29EA002B22A43CBE008862AF /* Utils */,
 				2948AAA1229D7EA300094E09 /* Services */,
 				29A2A24C229053230092490C /* Model */,
 				29A2A24B2290531D0092490C /* View */,
@@ -125,6 +128,14 @@
 				2948AA9F229D7E9E00094E09 /* Repo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		29EA002B22A43CBE008862AF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				29EA002C22A43CDE008862AF /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		6A0BF1163E86E0CA5B01ADF5 /* Pods */ = {
@@ -277,6 +288,7 @@
 				29A2A24E229054030092490C /* SplashVC.swift in Sources */,
 				29A2A2372290522B0092490C /* AppDelegate.swift in Sources */,
 				298C1D30229C33E0002DC5D3 /* CardView.swift in Sources */,
+				29EA002D22A43CDE008862AF /* Utils.swift in Sources */,
 				29A2A2392290522B0092490C /* ListRepoVC.swift in Sources */,
 				2948AA9E229D758C00094E09 /* SearchTextField.swift in Sources */,
 				2948AAA3229D7EBD00094E09 /* DataService.swift in Sources */,
