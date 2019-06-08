@@ -25,12 +25,7 @@ class RepoCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    override func layoutSubviews() {
-        backView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        backView.layer.opacity = 0.25
-        backView.layer.shadowRadius = 5.0
-        backView.layer.shadowOffset = CGSize(width: 0, height: 0)
-    }
+
     
     func setupViewCell (repo: Repo) {
         self.repoName.text = repo.name

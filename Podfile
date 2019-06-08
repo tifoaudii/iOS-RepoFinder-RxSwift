@@ -9,5 +9,6 @@ target 'RepoFinder' do
 	pod 'RxSwift'
 	pod 'RxCocoa'
 	pod 'Alamofire'
+	pod 'AlamofireImage'
 
 end
