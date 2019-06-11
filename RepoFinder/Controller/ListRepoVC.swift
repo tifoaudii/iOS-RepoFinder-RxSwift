@@ -15,38 +15,40 @@ class ListRepoVC: UIViewController {
     //MARK : Outlets here
     @IBOutlet weak var repoTableView: UITableView!
     
-    //MARK: Private data
-    private var trendingReposArray = [Repo]()
+    //MARK : Properties here
+    let refreshControl = UIRefreshControl()
+    var dataSource = PublishSubject<[Repo]>()
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        repoTableView.delegate = self
-        repoTableView.dataSource = self
         
-        DataService.sharedInstance.downloadTrendingRepos { (repos) in
-            self.trendingReposArray = repos
-            self.repoTableView.reloadData()
+        self.setupRefreshControl()
+        self.fetchTrendingRepos()
+        self.bindDataToTableView()
+    }
+    
+    private func setupRefreshControl() {
+        repoTableView.refreshControl = self.refreshControl
+        refreshControl.tintColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching trending repos", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1), NSAttributedString.Key.font: UIFont(name: "AvenirNext-DemiBold", size: 16.0)!])
+        refreshControl.addTarget(self, action: #selector(self.fetchTrendingRepos), for: .valueChanged)
+    }
+    
+    @objc private func fetchTrendingRepos() {
+        DataService.sharedInstance.downloadTrendingRepos { (trendingRepos) in
+            self.dataSource.onNext(trendingRepos)
+            self.refreshControl.endRefreshing()
         }
     }
-
-}
-
-extension ListRepoVC : UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trendingReposArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "repo_cell", for: indexPath) as? RepoCell {
-            let repo = trendingReposArray[indexPath.row]
+    private func bindDataToTableView() {
+        dataSource.bind(to: repoTableView.rx.items(cellIdentifier: "repo_cell")) { (row, repo: Repo, cell: RepoCell) in
             cell.setupViewCell(repo: repo)
-            return cell
-        } else {
-            return RepoCell()
-        }
+        }.disposed(by: disposeBag)
     }
-    
-    
+
 }
+    
+
 

@@ -24,8 +24,6 @@ class RepoCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-
     
     func setupViewCell (repo: Repo) {
         self.repoName.text = repo.name
