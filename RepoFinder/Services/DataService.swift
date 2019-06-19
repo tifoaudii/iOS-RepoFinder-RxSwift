@@ -6,7 +6,7 @@
 //  Copyright © 2019 BCC FILKOM. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Alamofire
 import AlamofireImage
 
@@ -78,7 +78,6 @@ class DataService {
                 completion(repo)
             })
         }
-        
     }
     
     private func getRepoAvatar(avatarUrl url: String, completion: @escaping (_ avatar: UIImage)->()) {

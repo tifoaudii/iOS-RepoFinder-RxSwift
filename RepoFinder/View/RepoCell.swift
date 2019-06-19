@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class RepoCell: UITableViewCell {
 
@@ -20,6 +22,7 @@ class RepoCell: UITableViewCell {
     @IBOutlet weak var backView: CardView!
     
     private var repoUrl:String?
+    private var disposeBag = DisposeBag()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,6 +36,11 @@ class RepoCell: UITableViewCell {
         self.repoLanguage.text = repo.language
         self.repoContributors.text = String(describing: repo.numberOfContributors)
         self.repoUrl = repo.url
+        
+        readmeButton.rx.tap
+            .subscribe(onNext: {
+                self.window?.rootViewController?.presentSFSafariVCfor(url: self.repoUrl!)
+            }).disposed(by: disposeBag)
     }
 
 }

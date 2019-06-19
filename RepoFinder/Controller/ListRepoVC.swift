@@ -14,6 +14,7 @@ class ListRepoVC: UIViewController {
     
     //MARK : Outlets here
     @IBOutlet weak var repoTableView: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     //MARK : Properties here
     let refreshControl = UIRefreshControl()
@@ -26,6 +27,7 @@ class ListRepoVC: UIViewController {
         self.setupRefreshControl()
         self.fetchTrendingRepos()
         self.bindDataToTableView()
+        spinner.startAnimating()
     }
     
     private func setupRefreshControl() {
@@ -39,6 +41,8 @@ class ListRepoVC: UIViewController {
         DataService.sharedInstance.downloadTrendingRepos { (trendingRepos) in
             self.dataSource.onNext(trendingRepos)
             self.refreshControl.endRefreshing()
+            self.spinner.stopAnimating()
+            self.spinner.isHidden = true
         }
     }
     

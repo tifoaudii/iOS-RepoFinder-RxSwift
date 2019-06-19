@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CFZ-IQ-eW7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Repo-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="ListRepoVC" customModule="RepoFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="list_repo" id="9pv-A4-QxB" customClass="ListRepoVC" customModule="RepoFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AAd-2G-b1B"/>
                         <viewControllerLayoutGuide type="bottom" id="OzR-ms-BSR"/>
@@ -215,11 +215,16 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YRA-Xe-lAE">
+                                <rect key="frame" x="197" y="396.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="YRA-Xe-lAE" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="2Ni-Nv-QoP"/>
                             <constraint firstItem="t8a-dG-7OB" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="4Xf-ob-g1w"/>
                             <constraint firstItem="bN5-cb-Vkg" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="KcI-jS-Q5G"/>
+                            <constraint firstItem="YRA-Xe-lAE" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="NSo-ZR-hJ6"/>
                             <constraint firstAttribute="bottom" secondItem="t8a-dG-7OB" secondAttribute="bottom" id="Qh5-hY-FuN"/>
                             <constraint firstItem="t8a-dG-7OB" firstAttribute="top" secondItem="bN5-cb-Vkg" secondAttribute="bottom" id="UTs-x8-10y"/>
                             <constraint firstAttribute="trailing" secondItem="bN5-cb-Vkg" secondAttribute="trailing" id="noS-k3-wEh"/>
@@ -232,6 +237,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="repoTableView" destination="t8a-dG-7OB" id="K6G-lD-xf0"/>
+                        <outlet property="spinner" destination="YRA-Xe-lAE" id="4iK-LN-6bC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -284,7 +290,7 @@
                                     <constraint firstAttribute="height" constant="160" id="vN4-H8-PKx"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XVJ-Z7-fRu">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XVJ-Z7-fRu">
                                 <rect key="frame" x="0.0" y="160" width="414" height="653"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -423,73 +429,6 @@
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="359.59821428571428"/>
         </scene>
-        <!--SplashVC-->
-        <scene sceneID="8ek-u1-nj8">
-            <objects>
-                <viewController id="CFZ-IQ-eW7" customClass="SplashVC" customModule="RepoFinder" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hM5-X0-Jxm"/>
-                        <viewControllerLayoutGuide type="bottom" id="mBo-1J-TBI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="axZ-9X-q3Q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYE-kI-tfg">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ob8-5R-qa8">
-                                        <rect key="frame" x="109.5" y="424" width="195" height="48"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Repo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCZ-d0-qJg">
-                                                <rect key="frame" x="0.0" y="0.0" width="85.5" height="48"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="48" id="URT-mc-0ZR"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="35"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMl-dp-4RN">
-                                                <rect key="frame" x="85.5" y="0.0" width="109.5" height="48"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="48" id="9eR-zB-yUt"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="109.5" id="kJL-b9-Z7n"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="35"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="Mpo-lH-TsI"/>
-                                            <constraint firstAttribute="width" constant="195" id="zfK-t1-ZWI"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="Ob8-5R-qa8" firstAttribute="centerX" secondItem="zYE-kI-tfg" secondAttribute="centerX" id="RSZ-BD-3LG"/>
-                                    <constraint firstItem="Ob8-5R-qa8" firstAttribute="centerY" secondItem="zYE-kI-tfg" secondAttribute="centerY" id="URb-g4-mMO"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="zYE-kI-tfg" secondAttribute="trailing" id="GOO-2F-6Ji"/>
-                            <constraint firstItem="zYE-kI-tfg" firstAttribute="top" secondItem="axZ-9X-q3Q" secondAttribute="top" id="M6j-IJ-ydP"/>
-                            <constraint firstItem="zYE-kI-tfg" firstAttribute="leading" secondItem="axZ-9X-q3Q" secondAttribute="leading" id="Png-HY-vCF"/>
-                            <constraint firstAttribute="bottom" secondItem="zYE-kI-tfg" secondAttribute="bottom" id="Qml-nm-ipd"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <segue destination="49e-Tb-3d3" kind="show" identifier="main_segue" id="PRT-gS-RBL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ve-pl-9KX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-852.17391304347836" y="1.3392857142857142"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -510,7 +449,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-259" y="-15"/>
         </scene>
     </scenes>
     <resources>

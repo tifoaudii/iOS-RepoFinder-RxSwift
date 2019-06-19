@@ -16,7 +16,7 @@ class SearchCell: UITableViewCell {
     @IBOutlet weak var repoForks: UILabel!
     @IBOutlet weak var repoLanguage: UILabel!
     
-    private var repoUrl: String?
+    var repoUrl: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -20,12 +20,15 @@ class SearchRepoVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.bindSearchTextField()
+        searchTableView.rx.setDelegate(self).disposed(by: disposeBag)
     }
     
     func bindSearchTextField() {
         let searchResult = searchTextField.rx.text
                             .orEmpty
+                            .debounce(1.0, scheduler: MainScheduler.instance)
                             .map {
                                 $0.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? ""
                             }.flatMap { (query) -> Observable<[Repo]> in
@@ -60,5 +63,17 @@ class SearchRepoVC: UIViewController {
         }.disposed(by: disposeBag)
     }
 
+}
+
+extension SearchRepoVC : UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? SearchCell else { return }
+        self.presentSFSafariVCfor(url: cell.repoUrl!)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        view.endEditing(true)
+    }
 }
 
